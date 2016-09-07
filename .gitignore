@@ -2,5 +2,7 @@ typings
 node_modules
 .idea
 .DS_STORE
+scripts/*bundle*.js
+scripts/*.map
 
 
