@@ -21,6 +21,6 @@ export function configure(aurelia: Aurelia) {
   if (environment.testing) {
     aurelia.use.plugin('aurelia-testing');
   }
-
+  requirejs.config({ paths: { 'vs': '../node_modules/monaco-editor/dev/vs' }});
   aurelia.start().then(() => aurelia.setRoot());
 }
