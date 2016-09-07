@@ -1,8 +1,3 @@
-
-
-
-
-
 /**A factory class used to create new monaco editors */
 export class EditorFactory
 {                    

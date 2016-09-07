@@ -5,19 +5,18 @@ import {EditorFactory} from './editorfactory'
 export class MonacoEditor
 {
     @bindable
-    public options : monaco.editor.IEditorConstructionOptions;
+    public options : monaco.editor.IEditorConstructionOptions;            
     
+    public editorHost : HTMLElement;
     private editorFactory : EditorFactory;
-    private element : Element;
 
-    constructor(element: Element, editorFactory : EditorFactory)
+    constructor(editorFactory : EditorFactory)
     {
-        this.editorFactory = editorFactory;
-        this.element = element;                
+        this.editorFactory = editorFactory;                        
     }
 
-    public attached() : Promise<any>
-    {                            
-        return this.editorFactory.createEditor(this.element.children[0] as HTMLElement, this.options);        
+    public attached() : void
+    {                                             
+        this.editorFactory.createEditor(this.editorHost, this.options)                       
     }
 }
